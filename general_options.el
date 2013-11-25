@@ -1,0 +1,6 @@
+;; -*- elisp -*-
+;;
+;; Emacs general options
+;;
+;;
+

@@ -1,0 +1,4 @@
+;; -*- elisp -*-
+;;
+;; Emacs Common functions
+;;
