@@ -16,3 +16,6 @@
   "Load gnus site configuration"
   (zotrix/load-gnus file noerror t))
 
+(defmacro RequireEmacs24 (&rest x)
+  "Evaluate body only if this is Emacs 24 version or more ."
+  (list 'if (>= emacs-major-version 24) (cons 'progn x)))
