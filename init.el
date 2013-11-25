@@ -11,7 +11,7 @@
   "EMACS Private Dir")
 
 (defmacro zotrix/my-conf (file &optional private)
-  `(if private
+  `(if ,private
        (expand-file-name ,file ,zotrix/private-dir)
      (expand-file-name ,file ,zotrix/emacs-home)))
 
@@ -22,10 +22,10 @@
 (defun zotrix/load-rc (file &optional noerror private)
   "Load configuration from rc dir"
   (zotrix/load-conf 
-   (concat (file-name-as-directory "rc") file) noerror private))
+   (concat (file-name-as-directory "rc") (format "emacs-rc-%s" file)) noerror private))
 
-(zotrix/load-conf "general_options")
 (zotrix/load-conf "general_functions")
+(zotrix/load-conf "general_options")
 
   ;; Customize and load customization
 (setq custom-file "~/.emacs.d/custom.el")
