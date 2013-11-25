@@ -27,6 +27,9 @@
 (zotrix/load-conf "general_functions")
 (zotrix/load-conf "general_options")
 
+;; Load application
+(zotrix/load-rc "jabber")
+
   ;; Customize and load customization
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
