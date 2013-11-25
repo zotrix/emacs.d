@@ -2,7 +2,7 @@
 ;;
 ;; Emacs general options
 ;;
-;; Time-stamp: <2013-11-25 22:39:43 zotrix>
+;; Time-stamp: <2013-11-25 23:29:27 zotrix>
 
 ;; Take Mac Bin paths
 (when (equal system-type 'darwin)
@@ -122,8 +122,10 @@
   (progn
     (load-theme 'zotrix t)))
 
+(RequireEmacs24
+ (require 'gnutls)
+  (add-to-list 'gnutls-trustfiles  "/etc/ssl/cert.pem"))
+
 (add-hook 'before-save-hook 'time-stamp)
 
 (message "General options initialised.")
-
-
