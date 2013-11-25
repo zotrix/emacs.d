@@ -2,14 +2,13 @@
 ;;
 
 (defvar zotrix/emacs-home
-  (expand-file-name ".emacs.d" (getenv "HOME"))
+  (file-name-as-directory (expand-file-name ".emacs.d" (getenv "HOME")))
   "EMACS Home Dir")
 
 (defvar zotrix/private-dir
-  (expand-file-name (file-name-as-directory "Private/emacs" )
-		    (getenv "HOME"))
+  (file-name-as-directory (expand-file-name  "Private/emacs"
+					     (getenv "HOME")))
   "EMACS Private Dir")
-
 
 (defmacro zotrix/my-conf (file &optional private)
   `(if private
@@ -25,8 +24,8 @@
   (zotrix/load-conf 
    (concat (file-name-as-directory "rc") file) noerror private))
 
-
-
+(zotrix/load-conf "general_options")
+(zotrix/load-conf "general_functions")
 
   ;; Customize and load customization
 (setq custom-file "~/.emacs.d/custom.el")
